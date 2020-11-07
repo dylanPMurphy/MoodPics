@@ -16,6 +16,7 @@ ul{
     padding-top:18px;
     padding-bottom:3px;
     margin-right:4px;
+    margin-top: 5px;
     width:100px;
     text-align: center;
 }
@@ -28,8 +29,10 @@ nav h3{
 
 #feed{
     display: inline-block;
+    border-radius: 30px;
+    border: 3px solid black;
+    border-style: double;
 
-    height:700px;
 }
 .card{
     display: inline-block;
@@ -69,63 +72,6 @@ nav h3{
 
 
 
-/* Horizontal Scroll */
-
-
-::-webkit-scrollbar{width:2px;height:2px;}
-::-webkit-scrollbar-button{width:2px;height:2px;}
-
-div{
-    box-sizing:border-box;
-}
-
-
-
-.horizontal-scroll-wrapper{
-    /* position:absolute; */
-    display:block;
-    /*top:0;
-    left:0; */
-    max-height:300px;
-    margin:0;
-    background:#abc;
-    overflow-y:auto;
-    overflow-x:hidden;
-    transform:rotate(-90deg) translateY(-80px);
-    transform-origin:right top;
-}
-.horizontal-scroll-wrapper > div{
-    display:inline-block;
-    width:270px;
-    padding:5px;
-    background:#cab;
-    transform:rotate(90deg);
-    transform-origin: right top;
-}
-
-/* .squares{
-    padding:60px 0 0 0;
-} */
-
-/* .squares > div{
-    width:60px;
-    height:60px;
-    margin:10px;
-} */
-
-/* .rectangles{
-    top:100px;
-    /* padding:100px 0 0 0; */
-
-.rectangles > div{
-    max-width:270px;
-
-    /* margin:50px 10px;
-    padding:5px; */
-    /* background:#cab; */
-    transform:rotate(90deg) translateY(80px);
-    transform-origin: right top;
-}
 
 
 /* Hover stuff */

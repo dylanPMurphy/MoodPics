@@ -2,7 +2,9 @@
 #menu{
     width:89px;
     padding-left:25px;
-
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 30px;
 }
 
 ul{
@@ -24,6 +26,24 @@ nav h3{
     padding-left:100px;
 }
 
+#feed{
+    display: inline-block;
+    overflow: auto;
+    white-space: nowrap;
+    height:700px;
+}
+.card{
+    display: inline-block;
+    width:300px;
+    border: 3px solid black;
+    border-radius: 12px;
+}
+#like{
+    width:15px;
+}
+#content{
+    width:275px;
+}
 /* #brilliant{
     background-color: gold;
 }

@@ -6,9 +6,10 @@
     <title>MoodPics | New Post</title>
 </head>
 <body>  
-    <form class="" action="/newpost" method="post">
+    <form class="" action="/feed/post/new/submit" method="post">
         {% csrf_token %}
         {{ newPostForm.as_p }}
+        
         <input type="submit" value="Post">
     </form>
 </body>

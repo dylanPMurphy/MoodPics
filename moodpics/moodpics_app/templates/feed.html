@@ -18,7 +18,7 @@
     
     <nav>
         <h1>MoodPics</h1>
-        <h3><a href="post/new">Upload</a></h3>
+        <h3><a href="/feed/post/new">Upload</a></h3>
         <h3>{{authenticated_user.first_name}}</h3>
     </nav>
 
@@ -36,71 +36,15 @@
 
 
     <div id="feed">
-        
+        {%for post in posts%}
             <div class="card">
-                <h4>Title</h4>
-                <img src="{%static 'img/sharp_favorite_border_black_48dp.png'%}" class="like hvr-grow"alt="">
-                <img id="content"src="{%static 'img/IMG_4210.JPG'%}">
-            </div>
-            <div class="card">
-                <h4>Title</h4>
+                <h4>{{post.title}}</h4>
                 <img src="{%static 'img/chatbubble-ellipses-outline.svg'%}" class="like hvr-grow"alt="">
                 
                 <img src="{%static 'img/sharp_favorite_border_black_48dp.png'%}" class="like hvr-grow"alt="">
-                <img id="content"src="{%static 'img/IMG_4210.JPG'%}">
+                <img id="content"src="images/{{post.img}}">
             </div>
-            <div class="card">
-                <h4>Title</h4>
-                <img src="{%static 'img/sharp_favorite_border_black_48dp.png'%}" class="like hvr-grow"alt="">
-                <img id="content"src="{%static 'img/IMG_4210.JPG'%}">
-            </div>
-            <div class="card">
-                <h4>Title</h4>
-                <img src="{%static 'img/sharp_favorite_border_black_48dp.png'%}" class="like hvr-grow"alt="">
-                <img id="content"src="{%static 'img/IMG_4210.JPG'%}">
-            </div>
-            <div class="card">
-                <h4>Title</h4>
-                <img src="{%static 'img/sharp_favorite_border_black_48dp.png'%}" class="like hvr-grow"alt="">
-                <img id="content"src="{%static 'img/IMG_4210.JPG'%}">
-            </div>
-            <div class="card">
-                <h4>Title</h4>
-                <img src="{%static 'img/sharp_favorite_border_black_48dp.png'%}" class="like hvr-grow"alt="">
-                <img id="content"src="{%static 'img/IMG_4210.JPG'%}">
-            </div>
-            <div class="card">
-                <h4>Title</h4>
-                <img src="{%static 'img/sharp_favorite_border_black_48dp.png'%}" class="like hvr-grow"alt="">
-                <img id="content"src="{%static 'img/IMG_4210.JPG'%}">
-            </div>
-            <div class="card">
-                <h4>Title</h4>
-                <img src="{%static 'img/sharp_favorite_border_black_48dp.png'%}" class="like hvr-grow"alt="">
-                <img id="content"src="{%static 'img/IMG_4210.JPG'%}">
-            </div>
-
-        
-            <div class="card">
-                <h4>Title</h4>
-                <img src="{%static 'img/sharp_favorite_border_black_48dp.png'%}" class="like hvr-grow"alt="">
-                <img id="content"src="{%static 'img/IMG_4210.JPG'%}">
-            </div>
-            <div class="card">
-                <h4>Title</h4>
-                <img src="{%static 'img/sharp_favorite_border_black_48dp.png'%}" class="like hvr-grow"alt="">
-                <img id="content"src="{%static 'img/IMG_4210.JPG'%}">
-            </div>
-            <div class="card">
-                <h4>Title</h4>
-                <img src="{%static 'img/sharp_favorite_border_black_48dp.png'%}" class="like hvr-grow"alt="">
-                <img id="content"src="{%static 'img/IMG_4210.JPG'%}">
-            </div>
-            <div class="card">
-                <h4>Title</h4>
-                <img src="{%static 'img/sharp_favorite_border_black_48dp.png'%}" class="like hvr-grow"alt="">
-                <img id="content"src="{%static 'img/IMG_4210.JPG'%}">
-            </div>
+        {%endfor%}
         </div>
         
 

@@ -1,5 +1,6 @@
 from django.db import models
 from login_reg.models import *
+
 # Create your models here.
 
 MOOD_CHOICES = [
@@ -14,10 +15,11 @@ MOOD_CHOICES = [
 
 class Post(models.Model):
     title = models.CharField(max_length=40)
-    img = models.ImageField(upload_to='images/')
+    img = models.FileField()
     poster = models.ForeignKey(User, related_name="posts", on_delete = models.CASCADE)
     likers = models.ManyToManyField(User, related_name="posts_liked")
     mood = models.CharField(max_length=1)
+    
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

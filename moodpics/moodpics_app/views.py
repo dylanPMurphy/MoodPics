@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from login_reg.models import *
 from .forms import *
 from .models import *
@@ -12,6 +12,9 @@ def index(request):
     return render(request, 'feed.html', context)
 
 def newPost(request):
+    if request.method == "POST":
+        form.save()
+        redirect("/")
     form = NewPostForm()
     context = { "newPostForm": form }
     return render(request, "newpost.html", context)
@@ -23,12 +26,12 @@ def submitPost(request):
     }
     Post.objects.create(
         title = request.POST['title'],
-        img = request.POST['img'],
+        img = request.FILES['img'],
         mood = request.POST['mood'],
         poster = User.objects.get(id =request.session['userid'])
         
     )
-    return render(request, 'feed.html', context)
+    return redirect('/feed')
 
 def getColors(request):
     pass

@@ -6,7 +6,7 @@
     <title>MoodPics | New Post</title>
 </head>
 <body>  
-    <form class="" action="/feed/post/new/submit" method="post">
+    <form class="" action="/feed/post/new/submit" enctype="multipart/form-data" method="post">
         {% csrf_token %}
         {{ newPostForm.as_p }}
         

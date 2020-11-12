@@ -1,6 +1,7 @@
 
 from django import forms
 
+
 class NewPostForm(forms.Form):
     MOOD_CHOICES = [
         ("B", "Brilliant"),
@@ -16,4 +17,4 @@ class NewPostForm(forms.Form):
         widget=forms.Select, 
         choices= MOOD_CHOICES
     )
-    img = forms.ImageField()
+    img = forms.FileField(widget=forms.ClearableFileInput())

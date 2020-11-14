@@ -44,7 +44,8 @@ nav h3{
 }
 
 .card{
-    
+    padding-left: 25px;
+    padding-right:25px;
     margin:18px;
     /* display: inline-block; */
     min-width:100px;
@@ -52,15 +53,21 @@ nav h3{
     border-radius: 12px;
 } 
 .card p{
-    margin-top: 2px;
-    margin-bottom:2px;
+    /* margin-top: 2px;
+    margin-bottom:2px; */
+    vertical-align: center;
+
 }
-.card h4{
+.card h4, h2{
     display: inline-block;
-    margin-top:5px;
+    /* margin-top:5px;
     margin-left:5px;
+     */
     
-    vertical-align: top;
+    vertical-align: center;
+}
+#dc{
+    display: inline-block;
 }
 .like{
     display:inline-block;
@@ -70,8 +77,18 @@ nav h3{
 }
 #content{
     width:390px;
-    
-    margin-left:25px;
+    display: block;
+    /* margin-left:25px;
+    margin-right:25px; */
+}
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: center;
+
 }
 /* #brilliant{
     background-color: gold;

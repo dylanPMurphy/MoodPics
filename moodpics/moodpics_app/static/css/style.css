@@ -1,23 +1,28 @@
 
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 #menu{
-    width:89px;
+    min-width:89px;
     padding-left:25px;
-    display: inline-block;
+    display: flex;
     vertical-align: top;
     margin-right: 30px;
 }
 
-ul{
-    margin-top:0px;
-    padding-top:0px;
+
+.clickable{
+    cursor: pointer;
 }
 .btn{
+    
     vertical-align:top;
-    padding-top:18px;
+    /* padding-top:18px;
     padding-bottom:3px;
     margin-right:4px;
-    margin-top: 5px;
-    width:100px;
+    margin-top: 5px; */
+    /* max-width:300px; */
     text-align: center;
 }
 nav h1,h3{
@@ -28,20 +33,28 @@ nav h3{
 }
 
 #feed{
-    display: inline-block;
+    display: inline-flex;
     border-radius: 30px;
     border: 3px solid black;
     border-style: double;
-    max-width:1000px;
+    min-width:600px;
+    /* height: 100vh; */
+    flex-wrap: wrap;
+    
 }
 
 .card{
-    margin:8px;
-    display: inline-block;
-    width:350px;
+    
+    margin:18px;
+    /* display: inline-block; */
+    min-width:100px;
     border: 3px solid black;
     border-radius: 12px;
 } 
+.card p{
+    margin-top: 2px;
+    margin-bottom:2px;
+}
 .card h4{
     display: inline-block;
     margin-top:5px;
@@ -52,11 +65,12 @@ nav h3{
 .like{
     display:inline-block;
     width:30px;
-
+    text-align: right;
     margin-top:5px;
 }
 #content{
-    width:300px;
+    width:390px;
+    
     margin-left:25px;
 }
 /* #brilliant{
@@ -198,6 +212,6 @@ nav h3{
     transition-property: transform;
 }
 .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
 }

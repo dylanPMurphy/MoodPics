@@ -1,4 +1,6 @@
+
 from django.db import models
+
 from login_reg.models import *
 
 # Create your models here.
@@ -23,6 +25,10 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    @property
+    def like_count(self):
+        return len(self.likers)
+    
 class Pallette(models.Model):
     
     photo = models.OneToOneField(Post,on_delete=models.CASCADE,primary_key=True,)

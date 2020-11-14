@@ -28,15 +28,16 @@ class Post(models.Model):
     @property
     def like_count(self):
         return len(self.likers)
-    
+    @property
+    def img_url(self):
+        return "https://moodpics.s3-us-west-1.amazonaws.com/media/"+str(self.img)
 class Pallette(models.Model):
     
-    photo = models.OneToOneField(Post,on_delete=models.CASCADE,primary_key=True,)
+    photo = models.OneToOneField(Post,related_name="pallette",on_delete=models.CASCADE,primary_key=True,)
     color_1 = models.CharField(max_length=6)
     color_2 = models.CharField(max_length=6)
     color_3 = models.CharField(max_length=6)
     color_4 = models.CharField(max_length=6)
-    color_5 = models.CharField(max_length=6)
 
 
 class Tag(models.Model):

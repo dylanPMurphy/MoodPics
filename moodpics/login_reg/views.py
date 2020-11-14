@@ -23,11 +23,11 @@ def register(request):
             # include some logic to validate user input before adding them to the database!
             password = request.POST['password']
             pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()  # create the hash    
-            print(pw_hash)      # prints something like b'$2b$12$sqjyok5RQccl9S6eFLhEPuaRaJCcH3Esl2RWLm/cimMIEnhnLb7iC'    
+            # prints something like b'$2b$12$sqjyok5RQccl9S6eFLhEPuaRaJCcH3Esl2RWLm/cimMIEnhnLb7iC'    
             
             # be sure you set up your database so it can store password hashes this long (60 characters)
             # make sure you put the hashed password in the database, not the one from the form!
-            newUser = User.objects.create(first_name=request.POST['first_name'], last_name=request.POST['last_name'], password=pw_hash, email=request.POST['email'])
+            newUser = User.objects.create(first_name=request.POST['first_name'], last_name=request.POST['last_name'], username=request.POST['username'], password=pw_hash, email=request.POST['email'])
             request.session['userid'] = newUser.id
             return redirect('/feed') 
             #Create an account

@@ -24,9 +24,9 @@ class UserManager(models.Manager):
         return errors
 
 class User(models.Model):
-    first_name = models.CharField(max_length=40)
-    last_name = models.CharField(max_length=40)
-
+    first_name = models.CharField(max_length=20)
+    last_name = models.CharField(max_length=20)
+    username =  models.CharField(max_length=40)
     email = models.CharField(max_length=50)
     password = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)

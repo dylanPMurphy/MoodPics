@@ -2,13 +2,18 @@
 * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
+#logo{
+    height:100px;
+    width: auto;
+}
 #menu{
     min-width:89px;
     padding-left:25px;
     display: flex;
+    flex-wrap: nowrap;
     vertical-align: top;
     margin-right: 30px;
+    flex-shrink: inherit;
 }
 
 #home-btn{
@@ -27,6 +32,8 @@
     display: inline-block;
     font-size: 16px;
     vertical-align:top;
+    
+
     /* padding-top:18px;
     padding-bottom:3px;
     margin-right:4px;
@@ -67,6 +74,9 @@ nav h3{
     vertical-align: center;
 
 }
+.card h2{
+    padding-bottom: 2px;
+}
 .card h4, h2{
     display: inline-block;
     /* margin-top:5px;
@@ -74,6 +84,9 @@ nav h3{
      */
     
     vertical-align: center;
+}
+.interactions{
+    float:right;
 }
 #dc{
     display: inline-block;

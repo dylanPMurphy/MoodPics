@@ -19,7 +19,7 @@
     <nav>
         <img id="logo"src="{%static 'img/MoodPics.png'%}">
         <h3><a href="/feed/post/new"><img id= "addbutton"src="{%static 'img/addbutton.png'%}"></a></h3>
-        <h3>{{authenticated_user.first_name}}</h3>
+        <h3>{{authenticated_user.username}}</h3>
         <a href="/logout">logout</a>
     </nav>
 

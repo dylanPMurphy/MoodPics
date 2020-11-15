@@ -10,7 +10,7 @@ from urllib.request import urlopen
 def index(request):
     context = {
         "authenticated_user": User.objects.get(id=request.session['userid']),
-        "posts":Post.objects.all()
+        "posts":Post.objects.all().order_by('-created_at')
     }
     return render(request, 'feed.html', context)
 
@@ -46,38 +46,38 @@ def submitPost(request):
 def brilliant(request):
     context = {
         "authenticated_user": User.objects.get(id=request.session['userid']),
-        "posts":Post.objects.filter(mood="B")
+        "posts":Post.objects.filter(mood="B").order_by('-created_at')
     }
     return render(request, 'feed.html', context)
 
 def gloom(request):
     context = {
         "authenticated_user": User.objects.get(id=request.session['userid']),
-        "posts":Post.objects.filter(mood="G")
+        "posts":Post.objects.filter(mood="G").order_by('-created_at')
     }
     return render(request, 'feed.html', context)
 
 def lush(request):
     context = {
         "authenticated_user": User.objects.get(id=request.session['userid']),
-        "posts":Post.objects.filter(mood="L")
+        "posts":Post.objects.filter(mood="L").order_by('-created_at')
     }
     return render(request, 'feed.html', context)
 def vibrant(request):
     context = {
         "authenticated_user": User.objects.get(id=request.session['userid']),
-        "posts":Post.objects.filter(mood="V")
+        "posts":Post.objects.filter(mood="V").order_by('-created_at')
     }
     return render(request, 'feed.html', context)
 def mystique(request):
     context = {
         "authenticated_user": User.objects.get(id=request.session['userid']),
-        "posts":Post.objects.filter(mood="M")
+        "posts":Post.objects.filter(mood="M").order_by('-created_at')
     }
     return render(request, 'feed.html', context)
 def turbulant(request):
     context = {
         "authenticated_user": User.objects.get(id=request.session['userid']),
-        "posts":Post.objects.filter(mood="T")
+        "posts":Post.objects.filter(mood="T").order_by('-created_at')
     }
     return render(request, 'feed.html', context)

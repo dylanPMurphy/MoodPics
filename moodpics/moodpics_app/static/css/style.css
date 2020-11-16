@@ -41,13 +41,18 @@
     /* max-width:300px; */
     text-align: center;
 }
-nav h1,h3{
-    display: inline-block;
+#profile{
+    float:right;
+    
 }
-nav h3{
-    padding-left:100px;
+#profile h2{
+    display: block;
 }
 
+#addbutton{
+    height:64px;
+    width: auto;
+}
 #feed{
     display: inline-flex;
     border-radius: 30px;

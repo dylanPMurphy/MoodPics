@@ -18,9 +18,11 @@
     
     <nav>
         <img id="logo"src="{%static 'img/MoodPics.png'%}">
+        <div id="profile">
+            <h3>{{authenticated_user.username}}</h3>
+            <a href="/logout">logout</a>
+        </div>
         
-        <h3>{{authenticated_user.username}}</h3>
-        <a href="/logout">logout</a>
     </nav>
 
 
@@ -34,7 +36,7 @@
         <a href="/feed/vibrant"id="vibrant" class="btn hvr-box-shadow-inset">Vibrant</a>
         <a href="/feed/mystique"id="mystique" class="btn hvr-box-shadow-inset">Mystique</a>
         <a href="/feed/turbulant"id="turbulant" class="btn hvr-box-shadow-inset">Turbulant</a>
-        <a href="/feed/post/new"><img id= "addbutton" class="btn" src="{%static 'img/addbutton.png'%}"></a>
+        <a href="/feed/post/new"><img id= "addbutton" src="{%static 'img/addbutton.png'%}"></a>
     </div>
 
 

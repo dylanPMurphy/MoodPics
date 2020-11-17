@@ -10,7 +10,7 @@ class NewPostForm(forms.Form):
         ("V","Vibrant"),
         ("M","Mystique"),
         ("T","Turbulant"),
-]
+    ]
     title = forms.CharField(label="Title:",max_length=45)
     mood = forms.ChoiceField(
         label="mood",

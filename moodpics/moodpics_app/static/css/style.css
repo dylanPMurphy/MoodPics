@@ -43,9 +43,15 @@
 }
 #profile{
     float:right;
-    
+    background-color: black;
+    color:white;
+    height:100px;
+    width:270px;
 }
-#profile h2{
+#profile_pic{
+    display:inline-block;
+}
+#profile a{
     display: block;
 }
 

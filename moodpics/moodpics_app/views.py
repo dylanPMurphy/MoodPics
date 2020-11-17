@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from login_reg.models import *
 from .forms import *
 from .models import *
@@ -81,3 +81,16 @@ def turbulant(request):
         "posts":Post.objects.filter(mood="T").order_by('-created_at')
     }
     return render(request, 'feed.html', context)
+
+def post_page(request, post_id):
+    context = {
+        "authenticated_user": User.objects.get(id=request.session['userid']),
+        "post": Post.objects.get(id=post_id),
+    }
+    return render(request, 'post.html', context)
+    
+def like_post(request,post_id):
+    authenticated_user=User.objects.get(id=request.session['userid'])
+    this_post = Post.objects.get(id=post_id)
+    this_post.likers.add(authenticated_user)
+    return HttpResponse("Successful")

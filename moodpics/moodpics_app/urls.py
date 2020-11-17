@@ -8,10 +8,11 @@ urlpatterns = [
     path('vibrant/', views.vibrant),
     path('mystique/', views.mystique),
     path('turbulant/', views.turbulant),
+    path('posts/new', views.newPost),
+    path('posts/new/submit', views.submitPost),
+    path('posts/<int:post_id>', views.post_page),
+    path('posts/<int:post_id>/like', views.like_post),
 
-    path('post/new', views.newPost),
-    
-    path('post/new/submit', views.submitPost),
-    path('api/get_colors', views.getColors)
+
 ]
 

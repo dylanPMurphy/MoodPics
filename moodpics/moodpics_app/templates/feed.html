@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ModdPics</title>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-
+    <script defer src="{% static 'js/index.js'%}"></script>
+    
 </head>
 <body>
     
@@ -19,6 +20,8 @@
     <nav>
         <img id="logo"src="{%static 'img/MoodPics.png'%}">
         <div id="profile">
+            <div id="profile_pic"class="dot"></div>
+
             <h3>{{authenticated_user.username}}</h3>
             <a href="/logout">logout</a>
         </div>
@@ -36,17 +39,21 @@
         <a href="/feed/vibrant"id="vibrant" class="btn hvr-box-shadow-inset">Vibrant</a>
         <a href="/feed/mystique"id="mystique" class="btn hvr-box-shadow-inset">Mystique</a>
         <a href="/feed/turbulant"id="turbulant" class="btn hvr-box-shadow-inset">Turbulant</a>
-        <a href="/feed/post/new"><img id= "addbutton" src="{%static 'img/addbutton.png'%}"></a>
+        <a href="/feed/posts/new"><img id= "addbutton" src="{%static 'img/addbutton.png'%}"></a>
     </div>
 
 
     <div id="feed">
         {%for post in posts%}
-            <div class="card hvr-grow clickable">
-                <h4>{{post.title}}</h4>
+            <div class="card">
+                <a href="/feed/posts/{{post.id}}"><h4>{{post.title}}</h4></a>
                 <div class="interactions">
                     <img src="{%static 'img/chatbubble-ellipses-outline.svg'%}" class="like hvr-grow"alt="">
-                    <img src="{%static 'img/sharp_favorite_border_black_48dp.png'%}" class="like hvr-grow"alt="">    
+                    {%if authenticated_user in post.likers.all%}
+                    <img src="{%static 'img/sharp_favorite_red_48dp.png'%}" postid="{{post.id}}" class="like hvr-grow"alt="">    
+                    {%else%}
+                    <img src="{%static 'img/sharp_favorite_border_black_48dp.png'%}" postid="{{post.id}}" class="likebutton like hvr-grow"alt="">    
+                    {%endif%}
                 </div>
                 <p>{{post.poster.username}}</p>
                 <img id="content"src={{post.img_url}}>

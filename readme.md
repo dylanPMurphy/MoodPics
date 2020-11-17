@@ -17,6 +17,6 @@ IN PROG
 - post individual page
 
 TODO
-
+- only show most recent posts(20)
 - comment route
 - User Profile Page

@@ -1,6 +1,8 @@
 This will display apps based on Mood filters.
 
-They will use pixel averaging to select background colors for their divs
+Users can upload and select a mood that thier photo or post puts them in.  
+
+All static and media files will be hosted in Amazon S3 for scalability.
 
 Done
 - AWS S3 implementation for static and Media Files

@@ -54,6 +54,7 @@
                     {%else%}
                     <img src="{%static 'img/sharp_favorite_border_black_48dp.png'%}" postid="{{post.id}}" class="likebutton like hvr-grow"alt="">    
                     {%endif%}
+                    <p>{{post.like_count}}</p>
                 </div>
                 <p>{{post.poster.username}}</p>
                 <img id="content"src={{post.img_url}}>

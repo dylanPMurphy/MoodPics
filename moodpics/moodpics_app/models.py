@@ -27,7 +27,7 @@ class Post(models.Model):
 
     @property
     def like_count(self):
-        return len(self.likers)
+        return len(self.likers.all())
     @property
     def img_url(self):
         return "https://moodpics.s3-us-west-1.amazonaws.com/media/"+str(self.img)

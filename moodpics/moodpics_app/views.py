@@ -92,5 +92,9 @@ def post_page(request, post_id):
 def like_post(request,post_id):
     authenticated_user=User.objects.get(id=request.session['userid'])
     this_post = Post.objects.get(id=post_id)
-    this_post.likers.add(authenticated_user)
-    return HttpResponse("Successful")
+    if authenticated_user in this_post.likers.all():
+        this_post.likers.remove(authenticated_user)
+        return HttpResponse(1)
+    else:
+        this_post.likers.add(authenticated_user)
+        return HttpResponse(0)

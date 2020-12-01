@@ -10,11 +10,11 @@ Done
 - photo uploading
 - color thief implemented to analyze images and display colors
 - user creation and log in
+- like button 
 
 IN PROG
 - Securing site
 - Flexbox CSS
-- like button 
 - css and beautification
 - post individual page
 

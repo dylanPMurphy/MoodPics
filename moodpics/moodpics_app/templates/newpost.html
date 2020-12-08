@@ -34,16 +34,7 @@
     </style>
     <script>
         $('#sendRequest').click(function(){         // the .click() method accepts a callback
-            $.ajax({                                
-                url: $(this).attr('action'),
-                method: "POST",
-                data: $(#newPost).serialize()
-            })
-            .done(function(res){                    // the .done() method accepts a callback
-                $('.loader').hide();                     
-                $('#result').html(res);             
-            })
-            $('.loader').show();                      
+            $(".loader").show();
         })
     </script>
 </body>

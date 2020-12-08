@@ -18,6 +18,10 @@ $(".likebutton").click(function(){
     })
 })
 
-
+$(".commentBtn").click(function(){
+    var post_id = $(this).attr("postid");
+    var commentInput = $(`#comment${post_id}`)
+    $(commentInput).toggle();
+})
 
 

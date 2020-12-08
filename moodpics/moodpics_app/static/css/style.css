@@ -127,6 +127,9 @@
     vertical-align: center;
 
 }
+.Comment{
+    display: none;
+}
 /* #brilliant{
     background-color: gold;
 }

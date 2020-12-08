@@ -48,7 +48,7 @@
             <div class="card">
                 <a href="/feed/posts/{{post.id}}"><h4>{{post.title}}</h4></a>
                 <div class="interactions">
-                    <img src="{%static 'img/chatbubble-ellipses-outline.svg'%}" class="like hvr-grow"alt="">
+                    <img src="{%static 'img/chatbubble-ellipses-outline.svg'%}" postid="{{post.id}}" class="like commentBtn hvr-grow"alt="">
                     {%if authenticated_user in post.likers.all%}
                     <img src="{%static 'img/sharp_favorite_red_48dp.png'%}" postid="{{post.id}}" class="likebutton like hvr-grow"alt="">    
                     {%else%}
@@ -64,6 +64,11 @@
                 <div style="background-color:{{post.pallette.color_3}}"id="dc3"class="dot"></div>
                 <div style="background-color:{{post.pallette.color_4}}"id="dc4"class="dot"></div>
                 <h2>{{post.mood}}</h2>
+                <form action="/feed/posts/{{post.id}}/comment" method="POST" postid="{{post.id}}" id ="comment{{post.id}}"class="Comment">
+                    {%csrf_token%}
+                    <input type="text" name="comment">
+                    <input type="submit" value="post">
+                </form>
             </div>
         {%endfor%}
         </div>

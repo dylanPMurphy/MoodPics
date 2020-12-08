@@ -5,7 +5,16 @@ from .models import *
 from colorthief import ColorThief
 import sys
 from urllib.request import urlopen
+
 # Create your views here.
+
+#TESTING React
+
+
+
+
+
+
 
 def index(request):
     context = {
@@ -21,6 +30,7 @@ def newPost(request):
     form = NewPostForm()
     context = { "newPostForm": form }
     return render(request, "newpost.html", context)
+
 def getColors(newPost):
     color_thief_on_post = ColorThief(newPost.img)
     dom_color_list = color_thief_on_post.get_palette(quality=1)
@@ -83,9 +93,11 @@ def turbulant(request):
     return render(request, 'feed.html', context)
 
 def post_page(request, post_id):
+    this_post = Post.objects.get(id=post_id)
     context = {
         "authenticated_user": User.objects.get(id=request.session['userid']),
-        "post": Post.objects.get(id=post_id),
+        "post": this_post,
+        "comments": this_post.comments_on_post.all()
     }
     return render(request, 'post.html', context)
     
@@ -98,3 +110,12 @@ def like_post(request,post_id):
     else:
         this_post.likers.add(authenticated_user)
         return HttpResponse(0)
+def comment_post(request, post_id):
+    authenticated_user=User.objects.get(id=request.session['userid'])
+    this_post = Post.objects.get(id=post_id)
+    Comment.objects.create(
+        comment_content = request.POST['comment'],
+        user_who_commented = authenticated_user,
+        parent_post = this_post
+    )
+    return HttpResponse(0)

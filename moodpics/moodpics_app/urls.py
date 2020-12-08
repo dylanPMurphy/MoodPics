@@ -12,6 +12,8 @@ urlpatterns = [
     path('posts/new/submit', views.submitPost),
     path('posts/<int:post_id>', views.post_page),
     path('posts/<int:post_id>/like', views.like_post),
+    path('posts/<int:post_id>/comment', views.comment_post),
+
 
 
 ]

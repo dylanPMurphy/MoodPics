@@ -14,11 +14,10 @@ Done
 
 IN PROG
 - Securing site
-- Flexbox CSS
 - css and beautification
 - post individual page
+- comment route
 
 TODO
 - only show most recent posts(20)
-- comment route
 - User Profile Page

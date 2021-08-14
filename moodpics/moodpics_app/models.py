@@ -114,10 +114,10 @@ class Post(models.Model):
 class Pallette(models.Model):
     
     photo = models.OneToOneField(Post,related_name="pallette",on_delete=models.CASCADE,primary_key=True,)
-    color_1 = models.CharField(max_length=6)
-    color_2 = models.CharField(max_length=6)
-    color_3 = models.CharField(max_length=6)
-    color_4 = models.CharField(max_length=6)
+    color_1 = models.CharField(max_length=10)
+    color_2 = models.CharField(max_length=10)
+    color_3 = models.CharField(max_length=10)
+    color_4 = models.CharField(max_length=10)
 
 
 class Tag(models.Model):
